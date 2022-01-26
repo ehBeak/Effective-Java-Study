@@ -1,8 +1,6 @@
 package item2;
 
-/*
-* 빌더 패턴은 계층적으로 설계된 클래스와 함께 쓰기에 좋다.
-* */
+/*빌더 패턴은 계층적으로 설계된 클래스와 함께 쓰기에 좋다.*/
 
 public class NutritionFacts {
 
