@@ -5,7 +5,7 @@ import java.lang.ref.Cleaner;
 /* cleaner을 안전망으로 활용하는 AutoCloseable 클래스*/
 public class Room implements AutoCloseable {
 
-    private static final Cleaner cleaner = Cleaner.create();
+    private static final Cleaner cleaner = Cleaner.create(); // cleaner 생성
 
     // 청소가 필요한 자원, 절대 Room을 참조해서는 안 된다!
     // ==> cleaner가 방을 청소할 때 수거할 자원들을 담고 있음
@@ -31,6 +31,7 @@ public class Room implements AutoCloseable {
         state = new State(numJunkPiles);
         cleanable = cleaner.register(this, state);
     }
+
 
     @Override
     public void close() throws Exception {

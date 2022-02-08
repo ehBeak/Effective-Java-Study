@@ -1,0 +1,36 @@
+==finalizer, cleaner 사용을 피하라==
+[1] 자바가 제공하는 객체 소멸자
+    * finalizer: 예측불가, 오동작, 낮은 성능, 이식성 문제, 예외 무시
+    * cleaner: 여전히 예측불가, 느림, 불필요
+
+    * 상태를 영구적으로 수정하는 작업에서는 절대 finalizer, cleaner 사용X
+    * 객체 소멸자는 c++의 destructor 과 다르다.(이 역할을 자바에서는 GC가 한다.)
+
+[2] 자바에서 자원을 회수하는 방법
+    * 기본적으로 GC가 한다.
+    * try-with-resource 사용
+    * try-finally 사용
+
+[3] finalizer, cleaner 가 실행됨은 보장해주는 메서드 -> 그냥 쓰지마 ㅂㄹ임
+    * System.runFinalizersOnExit
+    * Runtime.runFinalizerOnExit
+
+[4] cleaner 을 이용한 객체 소멸방법
+    * 클래스의 모든 인스턴스르 수거하는 형태: finalizer와 비슷
+    * 안전망 형태: AtuoClosable방식 사용하는 것보다 5배정도 느림(안정망을 설치한 대가)
+
+[5] finalizer을 이용한 객체 소멸 방법
+    * 느림
+    * finalizer 공격에 노출되어 심각한 보안 문제 발생
+    * finalizer의 역할
+        - 자원의 소유자가 close 메서드를 호출하지 않는 것에 대비한 안전망 역할
+        - 네이티브 피어와 연결된 객체??
+
+    * finalizer 공격에 대비 : final 클래스 생성하거나 finalize메소드를 만들고 final로 선언
+
+[6] finalizer나 cleaner을 대신해줄 AutoCloseable
+    * AutoCloseable구현 -> 인스턴스 다 쓰면 close메서드 호출
+    * 각 인스턴스는 자신이 닫혔는지를 추적하는 것이 좋다.
+        -> close 메서드에서 이 객체는 더 이상 유효하지 않음을 필드에 기록
+        -> 다른 메서드는 이 필드를 검사해서 객체가 닫힌 후에 불렸다면 IllegalStateException 던지기
+
