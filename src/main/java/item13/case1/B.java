@@ -17,4 +17,10 @@ public class B extends A {
     protected Object clone() throws CloneNotSupportedException {
         return super.clone(); // A의 값이 반환된다.
     }
+
+
+    /*@Override
+    protected B clone() throws CloneNotSupportedException {
+        return (B) super.clone(); // A의 값이 반환된다.
+    }*/
 }

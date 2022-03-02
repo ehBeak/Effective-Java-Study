@@ -1,7 +1,7 @@
 package item13.case2;
 
 // clone을 재정의한 클래스가 final일때
-public final class A {
+public final class A implements Cloneable { // => 이거 필요 없음!
     private int number;
     private String name;
 
@@ -10,6 +10,6 @@ public final class A {
     // Object의 clone 구현의 동작 방식에 기댈 필요가 없기 때문이다.
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        return new A(); // => super.clone() 호출 안하니까!
     }
 }

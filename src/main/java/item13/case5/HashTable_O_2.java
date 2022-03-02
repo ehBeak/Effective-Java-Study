@@ -32,6 +32,12 @@ public class HashTable_O_2 {
             HashTable_O_2 result = (HashTable_O_2) super.clone();
             result.buckets = new Entry2[buckets.length]; // 버킷 크기 할당
 
+            for (int i = 0; i < buckets.length; i++) {
+                if (buckets[i] != null) {
+                    result.buckets[i] = buckets[i].deepCopy();
+                }
+            }
+
             return result;
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();
