@@ -1,0 +1,11 @@
+Cloneable 재정의는 주의해서 진행해라
+1. Cloneable을 구현하는 것만으로는 외부 객체에서 clone메서드를 호출할 수 없다.(Object의 clone메서드는 protected에 위치한다.)
+
+Cloneable의 역할
+1. protected메서드인 clone의 동작방식을 결정한다.
+2. Cloneable을 구현한 클래스의 인스턴스에서 clone을 호출하면, 그 객체의 필드들을 하나하나 복사한 객체 반환, 그렇지 않은 인스턴스에서 호출 CloneNotSupportedException 호출
+3. Cloneable을 구현했다는 의미: Object클래스의 protected 메서드인 clone메서의 동작 방식을 변경 시켰다는 의미
+
+clone메서드를 잘 동작하게끔 해주는 구현 방법
+
+clone메서드를 구현해야 하는 상황
