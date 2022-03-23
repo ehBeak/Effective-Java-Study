@@ -24,7 +24,7 @@ public class InstrumentedHashSet<E> extends HashSet<E> {
     @Override
     public boolean addAll(Collection<? extends E> c) {
 
-        boolean modified = false;
+        /*boolean modified = false;
         Iterator<? extends E> iterator = c.iterator();
 
         while(iterator.hasNext()) {
@@ -33,11 +33,11 @@ public class InstrumentedHashSet<E> extends HashSet<E> {
                 modified = true;
             }
         }
-        return modified; //==> 구현 자체가 어렵고, private 필드를 상위 클래스에서 사용한다면 문제
+        return modified; //==> 구현 자체가 어렵고, private 필드를 상위 클래스에서 사용한다면 문제*/
 
-        /*
+
         addCount += c.size();
-        return super.addAll(c);*/
+        return super.addAll(c);
     }
 
     public int getAddCount() {

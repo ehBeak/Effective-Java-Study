@@ -1,8 +1,12 @@
 package item18;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Foo {
+
     public static void main(String[] args) {
         /* 상속보다는 컴포지션을 사용하라
         *  1. 다른 패키지의 구체 클래스를 상속하는 일은 위험하다
@@ -13,5 +17,16 @@ public class Foo {
 
         int addCount = s.getAddCount();
         System.out.println("addCount = " + addCount);
+
+        InstrumentedSet<String> set = new InstrumentedSet<>(new HashSet<>());
+        set.addAll(List.of("a", "b", "c"));
+        int addCount1 = set.getAddCount();
+        System.out.println("addCount1 = " + addCount1);
+
+
+    }
+
+    public void callBack(InstrumentedSet<String> instrumentedSet) {
+        
     }
 }
