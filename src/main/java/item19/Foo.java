@@ -18,6 +18,6 @@ public class Foo {
     *  3. 상속 클래스를 만든 것은 좋지 않은 생각*/
 
 
-    // 가장 좋은 방법 : 상쇽용으로 설계하지 않은 크래스는 상속을 금지하는 것이다 (final, 모든 생성자를 private, package-private, public 정적 팩터리)
+    // 가장 좋은 방법 : 상속용으로 설계하지 않은 크래스는 상속을 금지하는 것이다 (final, 모든 생성자를 private, package-private, public 정적 팩터리)
     // 꼭 상속 받아야 겠다면, 재정의 가능 메서드를 사용하지 않게 만들고 이를 문서로 남기기
 }
