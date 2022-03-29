@@ -37,4 +37,4 @@
 > item20 설명, item21, item22
 
 item20 설명
-> Seonju : [링크](https://github.com/ehBeak/Effective-Java-Study/item20)
+> Seonju : [링크](https://github.com/ehBeak/Effective-Java-Study/tree/main/item20)
