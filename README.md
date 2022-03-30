@@ -40,4 +40,4 @@ item20 설명
 > Seonju : [링크](https://github.com/ehBeak/Effective-Java-Study/tree/main/item20)
 
 220406
-> 
+> item23, item24, item25
