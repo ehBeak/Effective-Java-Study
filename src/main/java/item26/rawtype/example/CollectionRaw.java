@@ -12,7 +12,6 @@ public class CollectionRaw {
         for (Iterator i = stamps.iterator(); i.hasNext(); ) {
             Stamp stamp = (Stamp) i.next(); // ClassCastException
             stamp.cancel();
-
         }
     }
 
