@@ -16,7 +16,7 @@ public class Chooser<T> {
 
 
 
-    public Object choose() {
+    public T choose() {
         Random rnd = ThreadLocalRandom.current();
         return choiceArray[rnd.nextInt(choiceArray.length)];
     }
