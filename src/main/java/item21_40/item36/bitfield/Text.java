@@ -19,6 +19,10 @@ public class Text {
         text.applyStyles(STYLE_BOLD | STYLE_ITALIC);
     }
 
+    /**
+     * 장점
+     * 1. 비트별 연산을 사용해 합집합과 교집합과 같은 집합 연산을 효율적으로 수행할 수 있음
+     */
 
     /**
      * 단점
