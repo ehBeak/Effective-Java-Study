@@ -41,11 +41,13 @@ public class Plant {
             plantsByLifeCycle[p.lifeCycle.ordinal()].add(p);
         }
 
+        /////////////////////////////////////////////////////////////////////////
         //결과 출력 - for문
         for (int i = 0; i < plantsByLifeCycle.length; i++) {
             System.out.printf("%s: %s%n", Plant.LifeCycle.values()[i], plantsByLifeCycle[i]);
         }
 
+        ////////////////////////////////////////////////////////////
         //결과 출력 - stream: EnumMap이 아닌 고유한 맵 구현체를 사용했기 때문에 EnumMap을 써서 얻는 공간과 성능 이점이 사라진다.
         System.out.println(Arrays.stream(garden)
                 .collect(Collectors.groupingBy(p -> p.lifeCycle)));
@@ -55,6 +57,10 @@ public class Plant {
          * 1. 배열은 제네릭과 호환되지 않아 비검사 형변환을 수행해야 하고 깔끔히 컴파일이 되지 않는다.
          * 2. 배열은 각 인덱스의 의미를 모르니 출력 결과에 직접 레이블을 달아야 한다.
          * 3. 정확한 정숫값을 사용한다는 것을 직접 보증해야한다.(타입 안전하지 않기 때문)
+         */
+
+        /**
+         * 대안: EnumMap을 사용하자.
          */
     }
 

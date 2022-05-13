@@ -45,6 +45,7 @@ public class Plant {
         //결과 출력
         System.out.println(plantsByLifeCycle);
 
+        //////////////////////////////////////////////////////
         //결과 출력 - stream
         System.out.println(Arrays.stream(garden)
                 .collect(Collectors.groupingBy(p -> p.lifeCycle,
