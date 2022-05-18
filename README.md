@@ -69,3 +69,6 @@ item20 설명
 
 220521
 > item39, item40, item41
+
+220525
+> item7, item8 블로그
