@@ -26,13 +26,11 @@ public enum Phase {
         // key:SOLID  value:[SOLID,MELT(SOLID,LIQUID)]
         // 이전 상태와 '이후 상태에서 전이로의 맵'에 대응시키는 맵
         // 이전상태: SOLID  이후 상태: LIQUID  전이: MELT
-        private static final Map<Phase, Map<Phase, Transition>> m = Stream.of(values())
-                .collect(Collectors.groupingBy(t -> t.from, // SOLID
-                        () -> new EnumMap<>(Phase.class), // EnumMap
-                        Collectors.toMap(t -> t.to// LIQUID
-                                , t -> t // MELT
-                                , (x, y) -> y // 불필요한 코드
-                                , () -> new EnumMap<>(Phase.class))));
+        private static final Map<Phase, Map<Phase, Transition>> m =
+                Stream.of(values())
+                .collect(Collectors.groupingBy(t -> t.from, () -> new EnumMap<>(Phase.class), // EnumMap
+                        Collectors.toMap(t -> t.to, t -> t, (x, y) -> y, () -> new EnumMap<>(Phase.class))
+                ));
 
         public static Transition from(Phase from, Phase to) {
             return m.get(from).get(to);

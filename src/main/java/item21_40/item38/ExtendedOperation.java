@@ -32,6 +32,7 @@ public enum ExtendedOperation implements Operation {
     public static void main(String[] args) {
         double x = Double.parseDouble(args[0]);
         double y = Double.parseDouble(args[1]);
+
         test(ExtendedOperation.class, x, y);
 
         test2(Arrays.asList(ExtendedOperation.values()), x, y);
