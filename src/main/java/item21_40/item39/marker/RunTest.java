@@ -9,7 +9,7 @@ public class RunTest {
         int passed = 0;
 
         // forName에 매개변수가 args[0]이 들어가는지 모르겠음(작동 놉..)
-        Class<?> testClass = Class.forName("java/item21_40/item39/Sample.java");
+        Class<?> testClass = Class.forName(args[0]);
         for (Method m : testClass.getDeclaredMethods()) {
             if (m.isAnnotationPresent(Test.class)) {
                 tests++;
