@@ -20,9 +20,15 @@ public enum OperationLambda {
     public double apply(double x, double y) {
         return operator.applyAsDouble(x, y);
     }
+
     @Override
     public String toString() {
         return symbol;
+    }
+
+    public static void main(String[] args) {
+        OperationLambda op = OperationLambda.PLUS;
+        op.apply(1, 2);
     }
 }
 
