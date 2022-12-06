@@ -123,3 +123,9 @@ item20 설명
 
 20221126
 >item66, item67, item68
+
+20221206
+>item69, item70, item71
+
+20221225
+>item72, item73, item74
